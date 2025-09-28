@@ -4,8 +4,8 @@ const Banner = () => {
     return (
 
    <div className="bg-[#f5f5f5]">
-     <div className="w-11/12 mx-auto">
-     <div className="flex flex-col md:flex-row justify-center items-center gap-5 py-20">
+     <div className="">
+     <div className="container mx-auto flex flex-col md:flex-row justify-center items-center gap-5 py-20">
   <div className="left-card bg-gradient-to-l from-[#422AD5] to-[#422AD5] w-[850px] h-[250px] relative rounded-xl overflow-hidden">
     
     <img className='absolute left-0 top-0 h-full object-contain' src="/src/assets/vector1.png" alt="" />
