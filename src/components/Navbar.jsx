@@ -2,7 +2,7 @@ const Navbar = () => {
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm">
- <div className="flex justify-between w-8/12 mx-auto">
+ <div className="flex justify-between w-11/12 mx-auto">
      <div className="navbar-left">
     
     <h1 className="text-2xl font-bold">CS — Ticket System</h1> 
