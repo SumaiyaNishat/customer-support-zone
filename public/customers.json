@@ -31,7 +31,7 @@
     "title": "Incorrect Billing Address",
     "description": "Customer’s billing address shows a different city. They updated it but it still displays the old one.",
     "customer": "David Lee",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2025-09-15"
   },
@@ -40,7 +40,7 @@
     "title": "App Crash on Launch",
     "description": "Customer reports that the mobile app crashes immediately upon opening on Android 13.",
     "customer": "Emma Watson",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "In-Progress",
     "createdAt": "2025-09-17"
   },
@@ -49,7 +49,7 @@
     "title": "Refund Not Processed",
     "description": "Customer requested a refund two weeks ago but has not received the amount yet.",
     "customer": "Frank Miller",
-    "priority": "Critical",
+    "priority": "Low",
     "status": "Open",
     "createdAt": "2025-09-21"
   },
@@ -67,7 +67,7 @@
     "title": "Cart not updating",
     "description": "Items not reflecting in cart after adding.",
     "customer": "Henry Adams",
-    "priority": "High",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2025-09-16"
   },
@@ -76,7 +76,7 @@
     "title": "Subscription Auto-Renewal",
     "description": "Customer wants to enable auto-renewal for their subscription but the toggle is disabled.",
     "customer": "Irene Novak",
-    "priority": "Critical",
+    "priority": "HIGH PRIORITY",
     "status": "In-Progress",
     "createdAt": "2025-09-22"
   },

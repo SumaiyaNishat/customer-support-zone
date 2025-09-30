@@ -1,28 +1,35 @@
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import Main from './components/Main';
-import Footer from './components/Footer';
-import './App.css'
-import { Suspense } from 'react';
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const fetchCustomers = async () =>{
-  const res = await fetch("/customers.json")
-  return res.json()
-}
 function App() {
+  const [customers, setCustomers] = useState([]);
+  const [taskList, setTaskList] = useState([]);
+  const [resolvedList, setResolvedList] = useState([]);
 
-  const customersPromise = fetchCustomers()
+  useEffect(() => {
+    fetch("/customers.json")
+      .then(res => res.json())
+      .then(data => setCustomers(data));
+  }, []);
 
   return (
     <div>
-      <Navbar/>
-      <Banner/>
-      <Suspense>
-        <Main customersPromise={customersPromise}></Main>
-      </Suspense>
-      <Footer/>
+      <Navbar />
+      <Banner inProgressCount={taskList.length} resolvedCount={resolvedList.length} />
+      <Main
+        customers={customers}
+        taskList={taskList}
+        setTaskList={setTaskList}
+        resolvedList={resolvedList}
+        setResolvedList={setResolvedList}
+      />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
