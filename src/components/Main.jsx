@@ -1,24 +1,34 @@
 import img1 from "../assets/Ellipse22.png";
 import img2 from "../assets/Vector.png";
 import img3 from "../assets/Ellipse222.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Main = ({customers, taskList, setTaskList, resolvedList, setResolvedList}) => {
+const Main = ({
+  customers,
+  taskList,
+  setTaskList,
+  resolvedList,
+  setResolvedList,
+}) => {
   const addTask = (ticket) => {
     if (!taskList.find((t) => t.id === ticket.id)) {
       setTaskList([...taskList, ticket]);
+       toast.success("In-Progress");
     }
   };
 
   const completeTask = (ticket) => {
     setTaskList(taskList.filter((t) => t.id !== ticket.id));
     setResolvedList([...resolvedList, ticket]);
+    toast.success("completed!");
   };
 
   return (
     <div className="bg-[#f5f5f5]">
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="w-8/12 mx-auto">
         <div className="flex flex-col lg:flex-row justify-between w-[1440px] gap-8">
-       
           <div className="flex-1">
             <h1 className="text-xl font-bold mb-6">Customer Tickets</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 space-y-5">
@@ -34,14 +44,12 @@ const Main = ({customers, taskList, setTaskList, resolvedList, setResolvedList})
                         {customer.title}
                       </h2>
                       <button
-                        className={`rounded-2xl border-none w-[88px] h-[32px] flex items-center justify-center gap-2
-    ${
-      customer.status === "In-Progress"
-        ? "bg-[#F8F3B9] text-[#FEBB0C] w-[140px]"
-        : customer.status === "Open"
-        ? "bg-[#B9F8CF] text-[#0B5E06]"
-        : "bg-gray-300 text-black"
-    }`}
+                        className={`rounded-2xl border-none w-[88px] h-[32px] flex items-center justify-center gap-2 ${ customer.status === "In-Progress"
+                ? "bg-[#F8F3B9] text-[#FEBB0C] w-[140px]"
+                : customer.status === "Open"
+                ? "bg-[#B9F8CF] text-[#0B5E06]"
+                : "bg-gray-300 text-black"
+               }`}
                       >
                         <img
                           src={
