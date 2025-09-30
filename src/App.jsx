@@ -22,6 +22,7 @@ function App() {
       <Banner inProgressCount={taskList.length} resolvedCount={resolvedList.length} />
       <Main
         customers={customers}
+        setCustomers={setCustomers}
         taskList={taskList}
         setTaskList={setTaskList}
         resolvedList={resolvedList}

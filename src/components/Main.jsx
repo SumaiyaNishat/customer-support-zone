@@ -8,6 +8,7 @@ const Main = ({
   customers,
   taskList,
   setTaskList,
+  setCustomers,
   resolvedList,
   setResolvedList,
 }) => {
@@ -20,7 +21,9 @@ const Main = ({
 
   const completeTask = (ticket) => {
     setTaskList(taskList.filter((t) => t.id !== ticket.id));
+     setCustomers(customers.filter((c) => c.id !== ticket.id));
     setResolvedList([...resolvedList, ticket]);
+   
     toast.success("completed!");
   };
 
@@ -106,6 +109,7 @@ const Main = ({
           {/* Task Section */}
           <div className="w-[358px]">
             <h1 className="text-xl font-bold mb-4">Task Status</h1>
+            <div className="bg-base-100 card-xs shadow-sm mb-5 p-2">
             {taskList.length === 0 ? (
               <p className="text-[#627382]">
                 Select a ticket to add to Task Status
@@ -120,7 +124,7 @@ const Main = ({
                   <button
                     type="button"
                     onClick={() => completeTask(task)}
-                    className="bg-[#02A53B] text-white w-full px-3 py-1 rounded hover:bg-blue-600"
+                    className="bg-[#02A53B] text-white w-full px-3 py-1 rounded hover:cursor-pointer"
                   >
                     Complete
                   </button>
@@ -136,13 +140,19 @@ const Main = ({
                 resolvedList.map((task) => (
                   <div
                     key={task.id}
-                    className="bg-[#E0E7FF] p-3 rounded-lg shadow mb-2"
+                    className="bg-[#B9F8CF] p-3 rounded-lg shadow mb-2"
                   >
-                    <h2 className="font-semibold">{task.title}</h2>
+                    <h2 className="font-semibold pb-2">{task.title}</h2>
+                  <div className="flex justify-between">
+                    <p> Completed</p>
+                    <p className="text-gray-400">Click to remove</p>
+                  </div>
+
                   </div>
                 ))
               )}
             </div>
+          </div>
           </div>
         </div>
       </div>
