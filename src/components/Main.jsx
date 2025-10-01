@@ -30,8 +30,8 @@ const Main = ({
   return (
     <div className="bg-[#f5f5f5]">
       <ToastContainer position="top-right" autoClose={3000} />
-      <div className="w-8/12 mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between w-[1440px] gap-8">
+      <div className="w-full lg:w-8/12 mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="flex-1">
             <h1 className="text-xl font-bold mb-6">Customer Tickets</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 space-y-5">

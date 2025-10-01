@@ -7,9 +7,9 @@ import img7 from "../assets/fi_6244710.png";
 const Footer = () => {
     return (
     <div className="bg-[#000000]">
-        <div className='flex justify-between gap-4 py-10 w-11/12 mx-auto'>
+        <div className='flex flex-wrap justify-between gap-6 py-10 w-11/12 mx-auto'>
             
-            <div className='w-[300px]'>
+            <div className='w-full md:w-[300px] mb-6'>
                 <h1 className='font-bold text-xl text-white mb-5'>CS — Ticket System</h1>
                 <p className='text-[#A1A1AA] '>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </div>
