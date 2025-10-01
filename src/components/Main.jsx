@@ -15,22 +15,22 @@ const Main = ({
   const addTask = (ticket) => {
     if (!taskList.find((t) => t.id === ticket.id)) {
       setTaskList([...taskList, ticket]);
-       toast.success("In-Progress");
+      toast.success("In-Progress");
     }
   };
 
   const completeTask = (ticket) => {
     setTaskList(taskList.filter((t) => t.id !== ticket.id));
-     setCustomers(customers.filter((c) => c.id !== ticket.id));
+    setCustomers(customers.filter((c) => c.id !== ticket.id));
     setResolvedList([...resolvedList, ticket]);
-   
+
     toast.success("completed!");
   };
 
   return (
     <div className="bg-[#f5f5f5]">
       <ToastContainer position="top-right" autoClose={3000} />
-      <div className="w-full lg:w-8/12 mx-auto">
+      <div className="w-full lg:w-11/12 mx-auto">
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="flex-1">
             <h1 className="text-xl font-bold mb-6">Customer Tickets</h1>
@@ -47,12 +47,13 @@ const Main = ({
                         {customer.title}
                       </h2>
                       <button
-                        className={`rounded-2xl border-none w-[88px] h-[32px] flex items-center justify-center gap-2 ${ customer.status === "In-Progress"
-                ? "bg-[#F8F3B9] text-[#FEBB0C] w-[140px]"
-                : customer.status === "Open"
-                ? "bg-[#B9F8CF] text-[#0B5E06]"
-                : "bg-gray-300 text-black"
-               }`}
+                        className={`rounded-2xl border-none w-[88px] h-[32px] flex items-center justify-center gap-2 ${
+                          customer.status === "In-Progress"
+                            ? "bg-[#F8F3B9] text-[#FEBB0C] w-[140px]"
+                            : customer.status === "Open"
+                            ? "bg-[#B9F8CF] text-[#0B5E06]"
+                            : "bg-gray-300 text-black"
+                        }`}
                       >
                         <img
                           src={
@@ -110,49 +111,48 @@ const Main = ({
           <div className="w-[358px]">
             <h1 className="text-xl font-bold mb-4">Task Status</h1>
             <div className="bg-base-100 card-xs shadow-sm mb-5 p-2">
-            {taskList.length === 0 ? (
-              <p className="text-[#627382]">
-                Select a ticket to add to Task Status
-              </p>
-            ) : (
-              taskList.map((task) => (
-                <div
-                  key={task.id}
-                  className="bg-white p-3 rounded-lg shadow mb-3"
-                >
-                  <h2 className="font-semibold mb-2">{task.title}</h2>
-                  <button
-                    type="button"
-                    onClick={() => completeTask(task)}
-                    className="bg-[#02A53B] text-white w-full px-3 py-1 rounded hover:cursor-pointer"
-                  >
-                    Complete
-                  </button>
-                </div>
-              ))
-            )}
-
-            <div className="mt-6">
-              <h1 className="text-xl font-bold mb-4">Resolved Task</h1>
-              {resolvedList.length === 0 ? (
-                <p className="text-[#627382]">No resolved tasks yet.</p>
+              {taskList.length === 0 ? (
+                <p className="text-[#627382]">
+                  Select a ticket to add to Task Status
+                </p>
               ) : (
-                resolvedList.map((task) => (
+                taskList.map((task) => (
                   <div
                     key={task.id}
-                    className="bg-[#B9F8CF] p-3 rounded-lg shadow mb-2"
+                    className="bg-white p-3 rounded-lg shadow mb-3"
                   >
-                    <h2 className="font-semibold pb-2">{task.title}</h2>
-                  <div className="flex justify-between">
-                    <p> Completed</p>
-                    <p className="text-gray-400">Click to remove</p>
-                  </div>
-
+                    <h2 className="font-semibold mb-2">{task.title}</h2>
+                    <button
+                      type="button"
+                      onClick={() => completeTask(task)}
+                      className="bg-[#02A53B] text-white w-full px-3 py-1 rounded hover:cursor-pointer"
+                    >
+                      Complete
+                    </button>
                   </div>
                 ))
               )}
+
+              <div className="mt-6">
+                <h1 className="text-xl font-bold mb-4">Resolved Task</h1>
+                {resolvedList.length === 0 ? (
+                  <p className="text-[#627382]">No resolved tasks yet.</p>
+                ) : (
+                  resolvedList.map((task) => (
+                    <div
+                      key={task.id}
+                      className="bg-[#B9F8CF] p-3 rounded-lg shadow mb-2"
+                    >
+                      <h2 className="font-semibold pb-2">{task.title}</h2>
+                      <div className="flex justify-between">
+                        <p> Completed</p>
+                        <p className="text-gray-400">Click to remove</p>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
