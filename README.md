@@ -71,19 +71,19 @@ This project is a React-based **Customer Support Zone** designed to display cust
 Create a README file to answer the following question-
 
  - What is JSX, and why is it used?
- JSX (JavaScript XML) is a syntax extension for JavaScript used in React.It allows you to write HTML-like code inside JavaScript. It makes components easier to read and understand, and React converts it into JavaScript behind the scenes.
+ # JSX (JavaScript XML) is a syntax extension for JavaScript used in React.It allows you to write HTML-like code inside JavaScript. It makes components easier to read and understand, and React converts it into JavaScript behind the scenes.
 
  - What is the difference between State and Props?
- State is data that lives inside a component and can change over time. It is managed by the component itself and is updated using hooks like useState. When state changes, React re-renders the component to show the updated UI. Props are inputs passed from a parent component to a child component. They are read-only and cannot be changed by the child, making them useful for passing data, functions, or configuration.State is internal and mutable, while Props are external and immutable.
+ # State is data that lives inside a component and can change over time. It is managed by the component itself and is updated using hooks like useState. When state changes, React re-renders the component to show the updated UI. Props are inputs passed from a parent component to a child component. They are read-only and cannot be changed by the child, making them useful for passing data, functions, or configuration.State is internal and mutable, while Props are external and immutable.
 
  - What is the useState hook, and how does it work?
- The useState hook lets functional components have their own state. It gives you two things: the current value and a function to update that value.
+ # The useState hook lets functional components have their own state. It gives you two things: the current value and a function to update that value.
  When you call the update function, React re-renders the component so the UI always shows the latest state.
 
  - How can you share state between components in React?
- we can share state in React by lifting the state up to the nearest common parent and passing it down as props.
+ # we can share state in React by lifting the state up to the nearest common parent and passing it down as props.
  - How is event handling done in React?
- In React, event handling is done by using functions with camelCase names like onClick, onChange, or onSubmit. Instead of writing code directly inside HTML, we pass a function reference to handle the event when it happens. React also provides a synthetic event object, which is a wrapper around the browser’s native event, making event handling consistent across all browsers.
+ # In React, event handling is done by using functions with camelCase names like onClick, onChange, or onSubmit. Instead of writing code directly inside HTML, we pass a function reference to handle the event when it happens. React also provides a synthetic event object, which is a wrapper around the browser’s native event, making event handling consistent across all browsers.
 
 ---
 
